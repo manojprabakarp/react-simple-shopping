@@ -5,16 +5,31 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
     name: 'shop',
     initialState: {
-        products: ['item 1'," item 2","item 3","item 4"],
-        carts:[]
+        products: ['item 1', " item 2", "item 3", "item 4", "item 5", "item 6", "item 7"],
+        carts: []
     },
     reducers: {
         addToCart: (state, action) => {
-            state.carts.push(action.payload);   
+            let isExisting = false;
+            state.carts.map(element => {
+                if (element.id === action.payload.id) {
+                    element.count++;
+                    isExisting = !isExisting;
+                    //break;
+                }
+            });
+            if (!isExisting) {
+                action.payload['count'] = 1;
+                state.carts.push(action.payload);
+            }
         },
-        removeFromCart: (state, action) =>{
-            state.carts.splice(state.carts.indexOf(action.payload), 1);
-            console.log(state,'remove from cart')
+        removeFromCart: (state, action) => {
+            state.carts.map((element, index) => {
+                if (element.id === action.payload) {
+                   state.carts.splice(index, 1);
+                   //break;
+                }
+            });
         }
     },
 });

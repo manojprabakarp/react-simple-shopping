@@ -14,15 +14,18 @@
 .App-link {
   color: #61dafb;
 }
+
 .cartContainer{
   position: fixed;
   right: 3em;
   z-index: 99;
+  font-size: 0.9em;
 }
+
 .cartCont{
   position: fixed;
   right: 1em;
-  max-height: 10.8em;
+  max-height: 5.2em;
   overflow: auto;
   width: 6em;
   box-shadow: 5px 5px 8px -5px #000;
@@ -31,14 +34,17 @@
   border-radius: 2px;
   margin-top: 1.4em;
 }
+
 .products{
   display: block;
   box-shadow: 0px 0px 0.7px #000;
   background: #fcfdfd;
   padding: 0.3em;
+  font-size: 0.8em;
 }
+
 .addButton{
-  background: #bbff00;
+  background: #c4c4f0;
   color: #1d1d1d;
   cursor: pointer;
   border: 0;
@@ -48,18 +54,23 @@
   margin: auto;
   padding-bottom: 0.2em;
 }
+
 .addButton:hover{
   background: #2b2bff;
   transition: all 0.5s;
   box-shadow: 0px 6px 15px #0000ff61;
   color: #ffffff;
 }
+
 .plusButton {
   display: inline;
 }
+
 .cartItems{
   font-size: 0.6em;
+  margin: 4px 0px;
 }
+
 .removeBtn{
   font-size: 1.6em;
   color: #be0404;
@@ -67,6 +78,7 @@
   transform: rotate(-45deg) translate(-2px, 1px);
   cursor: pointer;
 }
+
 .removeBtn:hover{
   text-shadow: 0px 0px 6px #1d1d1d;
   color: #ff4d4d;
